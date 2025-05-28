@@ -15,8 +15,17 @@ export default function Board() {
     const [isDraw, setIsDraw] = useState(false);
     const [winCombo, setWinCombo] = useState<number[]>([]);
 
+    const handleClick = (idx: number) => {
+        if (board[idx] || winner) return;
+        const nextBoard = [...board];
+        nextBoard[idx] = xTurn ? "X" : "O";
+        setBoard(nextBoard);
+        setXTurn(!xTurn);
+    };
 
-    return (
+
+
+        return (
         <></>
     );
 }
