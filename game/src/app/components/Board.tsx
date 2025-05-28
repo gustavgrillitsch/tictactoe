@@ -42,7 +42,15 @@ export default function Board() {
         }
     }, [board, winner]);
 
-        return (
+    const resetGame = () => {
+        setBoard(Array(9).fill(""));
+        setXTurn(true);
+        setWinner(null);
+        setIsDraw(false);
+        setWinCombo([]);
+    };
+
+    return (
 
             <div className="flex flex-col items-center p-4">
                 <div className="text-2xl font-semibold mb-4">
@@ -62,6 +70,12 @@ export default function Board() {
                     />
                 ))}
             </div>
+                <button
+                    onClick={resetGame}
+                    className="mt-6 px-4 py-2 bg-blue-500 text-white rounded-lg shadow"
+                >
+                    New Game
+                </button>
             </div>
     );
 }
