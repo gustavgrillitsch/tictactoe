@@ -24,10 +24,34 @@ export default function Board() {
         setXTurn(!xTurn);
     };
 
-
+    useEffect(() => {
+        for (const combo of WINNING_COMBOS) {
+            const [a, b, c] = combo;
+            if (
+                board[a] &&
+                board[a] === board[b] &&
+                board[a] === board[c]
+            ) {
+                setWinner(board[a]);
+                setWinCombo(combo);
+                return;
+            }
+        }
+        if (board.every(cell => cell !== "")) {
+            setIsDraw(true);
+        }
+    }, [board, winner]);
 
         return (
-        <>
+
+            <div className="flex flex-col items-center p-4">
+                <div className="text-2xl font-semibold mb-4">
+                    {winner
+                        ? `${winner} Wins!`
+                        : isDraw
+                            ? "Draw!"
+                            : `${xTurn ? "X" : "O"} Turn`}
+                </div>
             <div className="grid grid-cols-3 gap-2">
                 {board.map((value, idx) => (
                     <Square
@@ -38,6 +62,6 @@ export default function Board() {
                     />
                 ))}
             </div>
-        </>
+            </div>
     );
 }
