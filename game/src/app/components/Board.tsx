@@ -10,6 +10,11 @@ const WINNING_COMBOS = [
 export default function Board() {
 
     const [board, setBoard] = useState<string[]>(Array(9).fill(""));
+    const [xTurn, setXTurn] = useState(true);
+    const [winner, setWinner] = useState<string | null>(null);
+    const [isDraw, setIsDraw] = useState(false);
+    const [winCombo, setWinCombo] = useState<number[]>([]);
+
 
     return (
         <></>
