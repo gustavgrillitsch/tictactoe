@@ -10,7 +10,7 @@ export default function Square({ value, onClick, highlight }: SquareProps) {
             onClick={onClick}
             className={`
         w-24 h-24 flex items-center justify-center text-4xl font-bold rounded-lg shadow-md
-        cursor-pointer transition
+        cursor-pointer transition hover:bg-gray-700
         ${highlight ? "bg-purple-600" : "bg-gray-900"}
         text-white
       `}
