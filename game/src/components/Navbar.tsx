@@ -8,9 +8,9 @@ const Sidebar: React.FC = () => {
     const pathname = usePathname();
     const links = [
         { name: 'Home', path: '/' },
-        { name: 'Tic Tac Toe', path: '/game' },
-        { name: 'Sudoku', path: '/sudoku' },
-        { name: 'Tetris', path: '/tetris' },
+        { name: 'Tic Tac Toe', path: '/TicTacToe' },
+        { name: 'Sudoku', path: '/Sudoku' },
+        { name: 'Tetris', path: '/Tetris' },
     ];
 
     return (

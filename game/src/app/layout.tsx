@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 
 export const metadata = {
     title: "Tic Tac Toe",
-    description: "Learn Next.js, TypeScript & Tailwind by building a Tic-Tac-Toe game",
+    description: "Learn Next.js, TypeScript & Tailwind by building a Tic-Tac-Toe TicTacToe",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
